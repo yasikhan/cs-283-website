@@ -1,0 +1,20 @@
+# --- Site ---
+title: CS 283
+description: >-
+  Stanford CS 283 course website.
+
+# For a GitHub Pages *project* site (served at yasikhan.github.io/cs-283-website),
+# baseurl must be the repo name so internal links resolve correctly.
+baseurl: "/cs-283-website"
+url: "https://yasikhan.github.io"
+
+# --- Build ---
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - README.md
+  - vendor
+  - .bundle
