@@ -63,27 +63,33 @@
   content: ":";
 }
 
-/* Consecutive dd rows for the same date shouldn't double the top padding */
+/* Consecutive dd rows for the same date (e.g. a section + an "HW due" badge):
+   pin them to the content column so they stay left-aligned under the first
+   entry instead of auto-flowing back into the date column. */
 .module > dl > dd + dd {
+  grid-column: 2;
   padding-top: 0;
   border-top: none;
 }
 
-/* Inner topic -> materials list */
+/* Inner topic -> materials list. The gap sets intentional space between a
+   lecture/section title and its readings/requirements. */
 .module dd dl {
   display: flex;
   flex-direction: column;
+  gap: 0.35rem;
   margin: 0;
 }
 
 @media (min-width: 40rem) {
   .module dd dl {
     flex-direction: row;
+    gap: 1rem;
   }
 }
 
 .module dd dl dt {
-  flex: 0 0 62.5%;
+  flex: 0 0 60%;
   font-weight: normal;
   margin: 0;
 }

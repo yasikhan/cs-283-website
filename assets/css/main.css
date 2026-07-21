@@ -343,17 +343,70 @@ blockquote.epigraph footer {
   padding: 1rem 1rem 0 1rem;
 }
 
+/* Match the footer to the content column so their left/right edges line up. */
+#site-footer {
+  max-width: 35rem;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+/* Course staff (home page): responsive grid of headshot cards, cs231n-style.
+   .staff-photo is a CSS-drawn placeholder circle — swap for real <img> later. */
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.staff-card {
+  width: 6rem;
+  text-align: center;
+}
+
+.staff-photo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--cardinal-tint);
+  margin: 0 auto 0.4rem;
+}
+
+.staff-name {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.staff-role {
+  font-size: 0.75rem;
+  color: #555;
+}
+
 .demo {
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
 #nav-bg {
+  position: relative;
   margin: 0;
   padding: 0.25rem 1rem;
   font-family: "Courier Prime", monospace;
   background: var(--cardinal);
   color: #fff;
+}
+
+/* Stanford mark, anchored far-right and vertically centered on the nav bar.
+   Portrait mark → size by height so it stays a narrow badge beside the links. */
+.nav-logo {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.5rem;
+  width: auto;
+  margin: 0;
+  border-radius: 0;
 }
 
 #top-nav {
@@ -484,6 +537,10 @@ input[type=checkbox]:checked ~ .menu-label:after {
 
   .accent {
     color: #F92672;
+  }
+
+  .staff-role {
+    color: #aaa;
   }
 
   .construction {

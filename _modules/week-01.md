@@ -4,14 +4,14 @@ year: 2026
 order: 1
 ---
 
-Sep 22
+Sep 21
 : [Lecture 1 — placeholder title](#)
-  : [notes](#), [slides](#)
+  : [slides](#), [notes](#)
 
-Sep 24
-: **Section**{: .label .label-section }[Placeholder section topic](#)
-
-Sep 26
+Sep 23
 : [Lecture 2 — placeholder title](#)
-  : [notes](#)
+  : [slides](#), [notes](#)
+
+Sep 25
+: **Section**{: .label .label-section }[Section 1 — placeholder topic](#)
 : **HW 1 due**{: .label .label-due }
