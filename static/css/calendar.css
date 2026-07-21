@@ -4,7 +4,7 @@
    Each module is a card holding a kramdown definition list: date : topic : materials. */
 
 .module-title {
-  font-family: "Arvo", serif;
+  font-family: "Playfair Display", serif;
   color: var(--cardinal);
   font-size: 1.25rem;
   margin-top: 2rem;

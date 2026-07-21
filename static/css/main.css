@@ -26,6 +26,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   line-height: 1.25;
   font-size: 1rem;
@@ -348,7 +349,7 @@ blockquote.epigraph footer {
 #nav-bg {
   margin: 0;
   padding: 0.25rem 1rem;
-  font-family: "Arvo", serif;
+  font-family: "Playfair Display", serif;
   background: var(--cardinal);
   color: #fff;
 }
@@ -391,7 +392,7 @@ input[type=checkbox]:checked ~ .trigger {
 }
 
 .menu-label {
-  font-family: "Arvo", serif;
+  font-family: "Playfair Display", serif;
 }
 
 input[type=checkbox] ~ .menu-label:after {
