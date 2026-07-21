@@ -5,7 +5,18 @@ Course website for **CS 283** (Stanford) — a course taught **every fall** to b
 
 - Repo: `yasikhan/cs-283-website`
 - Live URL: https://yasikhan.github.io/cs-283-website/
-- Local preview: `bundle exec jekyll serve` → http://localhost:4000/cs-283-website/
+- Local preview (requires Ruby 3.3 — see below):
+  `export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH" && bundle exec jekyll serve`
+  → http://localhost:4000/cs-283-website/
+
+## Local Ruby
+
+Use **Ruby 3.3** (`brew install ruby@3.3`), which matches GitHub Pages' build
+environment (`github-pages` 232 / Jekyll 3.10). It's keg-only, so prepend
+`/opt/homebrew/opt/ruby@3.3/bin` to `PATH` before running bundler. Newer Rubies
+(3.4+/4.x) remove stdlib libraries and the `String#tainted?` method that the
+Pages-pinned Jekyll still uses, so builds fail there. The `Gemfile` also declares
+`csv`/`base64`/`bigdecimal`/`logger` (former default gems) for forward safety.
 
 ## Working agreement (IMPORTANT)
 
