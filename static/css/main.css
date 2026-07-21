@@ -1,6 +1,7 @@
 /* Adapted from Missing Semester (github.com/missing-semester/missing-semester),
    Copyright (c) 2017 Anish Athalye, licensed CC BY-NC-SA 4.0. Modified for CS 283:
-   Stanford color tokens (see theme.css) and Playfair Display/Lato fonts (via <head>). */
+   Stanford color tokens (see theme.css); Courier Prime (nav) and Lato
+   (headings + body) fonts (via <head>). */
 
 /* Basic styling */
 
@@ -26,8 +27,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
-  font-family: "Playfair Display", serif;
+  font-family: "Lato", sans-serif;
   font-weight: bold;
+  color: var(--cardinal);
   line-height: 1.25;
   font-size: 1rem;
 }
@@ -349,7 +351,7 @@ blockquote.epigraph footer {
 #nav-bg {
   margin: 0;
   padding: 0.25rem 1rem;
-  font-family: "Playfair Display", serif;
+  font-family: "Courier Prime", monospace;
   background: var(--cardinal);
   color: #fff;
 }
@@ -392,7 +394,7 @@ input[type=checkbox]:checked ~ .trigger {
 }
 
 .menu-label {
-  font-family: "Playfair Display", serif;
+  font-family: "Courier Prime", monospace;
 }
 
 input[type=checkbox] ~ .menu-label:after {
@@ -419,12 +421,32 @@ input[type=checkbox]:checked ~ .menu-label:after {
 /* in terms of our fixed-width layout; if smaller than this, we want to
  * collapse the menu */
 @media (min-width: 40rem) {
+  /* Logo pinned left, links centered on the page: equal flex on the logo and
+     the trailing spacer balances the auto-width links into the middle. Widen
+     the nav past the 40rem content width so nothing wraps or overflows. */
+  #top-nav {
+    display: flex;
+    align-items: baseline;
+    max-width: 56rem;
+    white-space: nowrap;
+  }
+
+  #logo {
+    flex: 1;
+    text-align: left;
+  }
+
+  .nav-spacer {
+    flex: 1;
+  }
+
   .menu-label {
     display: none;
   }
 
   .trigger {
     display: inline;
+    flex: 0 1 auto;
     padding-top: inherit;
   }
 
@@ -465,7 +487,7 @@ input[type=checkbox]:checked ~ .menu-label:after {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #eee;
+    color: var(--cardinal-light);
   }
 
   #nav-bg, a#logo, #top-nav a {

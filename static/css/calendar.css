@@ -4,9 +4,13 @@
    Each module is a card holding a kramdown definition list: date : topic : materials. */
 
 .module-title {
-  font-family: "Playfair Display", serif;
-  color: var(--cardinal);
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  background-color: var(--cardinal);
+  color: #fff;
   font-size: 1.25rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -128,4 +132,38 @@
 .label-red {
   background-color: var(--cardinal);
   color: var(--cream);
+}
+
+/* Dark mode: re-theme the week cards so they transition with the page instead
+   of staying bright white. The .module-title bar (cardinal + white) already
+   reads well against dark, so it needs no override here. */
+@media (prefers-color-scheme: dark) {
+  .module {
+    background-color: #383838;
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .module > dl {
+    border-top-color: rgba(255, 255, 255, 0.14);
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .module > dl > dt,
+  .module > dl > dd {
+    border-top-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .module > dl > dt {
+    color: #bbb;
+  }
+
+  /* Tinted (sections, labs) badges: lift text to the light cardinal so they
+     stay legible on the dark card. Solid .label-due stays white-on-cardinal
+     (not listed here, so its base rule is untouched). */
+  .label-section,
+  .label-purple {
+    background-color: rgba(232, 116, 111, 0.22);
+    color: var(--cardinal-light);
+  }
 }

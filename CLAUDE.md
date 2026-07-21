@@ -36,9 +36,10 @@ Course website for **CS 283** (Stanford) — taught **every fall** to both
 - `--cardinal-tint: rgba(140,21,21,.15)` — highlights, tinted labels.
 - `--cardinal-light: #E8746F` — dark-mode accents.
 - `--cream: #FEFFED` — page background.
-- Fonts (loaded in `_includes/head.html`): **Playfair Display** (nav bar + all
-  headings/titles), **Lato** (body), Source Code Pro (code — TBD).
-  `main.css`/`calendar.css` reference the tokens above.
+- Fonts (loaded in `_includes/head.html`): **Courier Prime** (nav bar), **Lato**
+  (all headings/titles — bold, cardinal-colored — plus body), Source Code Pro
+  (code — TBD). Playfair Display is no longer used. `main.css`/`calendar.css`
+  reference the tokens above.
 
 ## Structure
 
