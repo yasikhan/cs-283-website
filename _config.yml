@@ -1,7 +1,9 @@
 # --- Site ---
-title: CS 283
+title: "CS283: Governing Artificial Intelligence: Law, Policy, and Institutions"
+short_title: "CS283"   # used for the browser-tab suffix on inner pages
 description: >-
-  Stanford CS 283 course website.
+  Stanford CS283 — Governing Artificial Intelligence: Law, Policy, and
+  Institutions. Course website.
 
 # For a GitHub Pages *project* site (served at yasikhan.github.io/cs-283-website),
 # baseurl must be the repo name so internal links resolve correctly.

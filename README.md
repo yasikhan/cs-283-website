@@ -1,6 +1,7 @@
-# CS 283 Course Website
+# CS283 Course Website
 
-Jekyll site for Stanford CS 283, hosted on GitHub Pages:
+Jekyll site for **CS283: Governing Artificial Intelligence: Law, Policy, and
+Institutions** (Stanford), hosted on GitHub Pages:
 https://yasikhan.github.io/cs-283-website/
 
 The design is adapted from MIT's [Missing Semester](https://missing.csail.mit.edu/)

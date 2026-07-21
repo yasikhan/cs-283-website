@@ -4,7 +4,7 @@ title: License
 permalink: /license/
 ---
 
-The content and source code of this CS 283 course website are licensed under
+The content and source code of this CS283 course website are licensed under
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 You are free to **share** and **adapt** this material, under these terms:

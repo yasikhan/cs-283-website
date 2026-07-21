@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "CS 283: [Course Title TBD]"
+title: "CS283: Governing Artificial Intelligence: Law, Policy, and Institutions"
 permalink: /
 nositetitle: true
 ---

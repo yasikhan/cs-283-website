@@ -1,6 +1,6 @@
 /* Course calendar styling.
    Structure/markup adapted from Just the Class (github.com/kevinlin1/just-the-class, MIT);
-   re-implemented standalone (no Just the Docs framework) and themed for CS 283.
+   re-implemented standalone (no Just the Docs framework) and themed for CS283.
    Each module is a card holding a kramdown definition list: date : topic : materials. */
 
 .module-title {

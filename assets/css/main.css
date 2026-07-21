@@ -1,5 +1,5 @@
 /* Adapted from Missing Semester (github.com/missing-semester/missing-semester),
-   Copyright (c) 2017 Anish Athalye, licensed CC BY-NC-SA 4.0. Modified for CS 283:
+   Copyright (c) 2017 Anish Athalye, licensed CC BY-NC-SA 4.0. Modified for CS283:
    Stanford color tokens (see theme.css); Courier Prime (nav) and Lato
    (headings + body) fonts (via <head>). */
 
@@ -357,7 +357,9 @@ blockquote.epigraph footer {
 }
 
 #top-nav {
-  max-width: 40rem;
+  /* Wide enough to hold the whole centered nav row (logo + 5 links) on one
+     line in Courier Prime before the mobile menu collapses at 40rem. */
+  max-width: 48rem;
   margin: auto;
   text-align: center;
 }
@@ -421,32 +423,13 @@ input[type=checkbox]:checked ~ .menu-label:after {
 /* in terms of our fixed-width layout; if smaller than this, we want to
  * collapse the menu */
 @media (min-width: 40rem) {
-  /* Logo pinned left, links centered on the page: equal flex on the logo and
-     the trailing spacer balances the auto-width links into the middle. Widen
-     the nav past the 40rem content width so nothing wraps or overflows. */
-  #top-nav {
-    display: flex;
-    align-items: baseline;
-    max-width: 56rem;
-    white-space: nowrap;
-  }
-
-  #logo {
-    flex: 1;
-    text-align: left;
-  }
-
-  .nav-spacer {
-    flex: 1;
-  }
-
+  /* Logo + links share one centered row (cs283 home | schedule | …). */
   .menu-label {
     display: none;
   }
 
   .trigger {
     display: inline;
-    flex: 0 1 auto;
     padding-top: inherit;
   }
 
