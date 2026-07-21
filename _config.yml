@@ -8,13 +8,48 @@ description: >-
 baseurl: "/cs-283-website"
 url: "https://yasikhan.github.io"
 
+# The active offering; the schedule filters modules to this year.
+current_year: 2026
+
 # --- Build ---
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+permalink: /:title/
+timezone: America/Los_Angeles
+# Lecture/module dates are in the future relative to build time; render them anyway.
+future: true
+
+# --- Collections ---
+collections:
+  # Weekly calendar entries (rendered inline on /schedule/, no standalone pages).
+  modules:
+    output: false
+  # Lecture pages for the 2026 offering (archived per year).
+  '2026':
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: modules
+    values:
+      layout: module
+  - scope:
+      path: ""
+      type: '2026'
+    values:
+      layout: lecture
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - CLAUDE.md
   - README.md
+  - LICENSE
+  - NOTICE
   - vendor
   - .bundle

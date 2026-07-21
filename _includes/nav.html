@@ -1,9 +1,17 @@
 <!-- Top navigation. Edit once here; every page inherits it via the default layout. -->
-<nav>
-  <a href="{{ '/' | relative_url }}">Course</a>
-  <a href="{{ '/schedule/' | relative_url }}">Schedule</a>
-  <a href="{{ '/lectures/' | relative_url }}">Lectures</a>
-  <a href="{{ '/assignments/' | relative_url }}">Assignments</a>
-  <a href="{{ '/sections/' | relative_url }}">Sections</a>
-  <a href="{{ '/resources/' | relative_url }}">Resources</a>
-</nav>
+<div id="nav-bg">
+  <nav id="top-nav">
+    <a href="{{ '/' | relative_url }}" id="logo">CS 283</a>
+    <input type="checkbox" id="menu-icon">
+    <label class="menu-label" for="menu-icon"></label>
+    <div class="trigger">
+      <div class="trigger-child">
+        <span class="nav-link"><a href="{{ '/schedule/' | relative_url }}">schedule</a></span>
+        <span class="nav-link"><a href="{{ '/lectures/' | relative_url }}">lectures</a></span>
+        <span class="nav-link"><a href="{{ '/assignments/' | relative_url }}">assignments</a></span>
+        <span class="nav-link"><a href="{{ '/sections/' | relative_url }}">sections</a></span>
+        <span class="nav-link"><a href="{{ '/resources/' | relative_url }}">resources</a></span>
+      </div>
+    </div>
+  </nav>
+</div>

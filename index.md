@@ -1,8 +1,9 @@
 ---
-layout: default
-title: Course
+layout: page
+title: "CS 283: [Course Title TBD]"
 permalink: /
+nositetitle: true
 ---
 
-<!-- Home / course overview: title, description, logistics, staff, announcements.
-     Content and layout TBD (collaborative). -->
+<!-- Home / course overview: description, logistics, staff, announcements.
+     Content added collaboratively. -->

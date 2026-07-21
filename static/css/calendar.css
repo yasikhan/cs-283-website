@@ -1,0 +1,131 @@
+/* Course calendar styling.
+   Structure/markup adapted from Just the Class (github.com/kevinlin1/just-the-class, MIT);
+   re-implemented standalone (no Just the Docs framework) and themed for CS 283.
+   Each module is a card holding a kramdown definition list: date : topic : materials. */
+
+.module-title {
+  font-family: "Arvo", serif;
+  color: var(--cardinal);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card */
+.module {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Outer date -> content grid */
+.module > dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 0.5rem -1rem;
+}
+
+@media (min-width: 40rem) {
+  .module > dl {
+    grid-template-columns: 8rem 1fr;
+  }
+}
+
+.module > dl > dt,
+.module > dl > dd {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* First row: no top border */
+.module > dl > dt:first-child,
+.module > dl > dt:first-child + dd {
+  border-top: none;
+}
+
+.module > dl > dt {
+  text-align: right;
+  font-weight: normal;
+  color: #555;
+}
+
+.module > dl > dt::after {
+  content: ":";
+}
+
+/* Consecutive dd rows for the same date shouldn't double the top padding */
+.module > dl > dd + dd {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Inner topic -> materials list */
+.module dd dl {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+@media (min-width: 40rem) {
+  .module dd dl {
+    flex-direction: row;
+  }
+}
+
+.module dd dl dt {
+  flex: 0 0 62.5%;
+  font-weight: normal;
+  margin: 0;
+}
+
+.module dd dl dt::after {
+  content: none;
+}
+
+.module dd dl dd {
+  margin: 0;
+}
+
+/* Remove the global "– " list bullets inside modules */
+.module li::before,
+.module dd::before {
+  content: none;
+}
+
+/* Badges (kramdown IAL: **HW 1 due**{: .label .label-due }) */
+.label {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+  background-color: var(--cardinal-tint);
+  color: var(--cardinal);
+  vertical-align: baseline;
+}
+
+/* Tinted (sections, labs) — also aliased to Just the Class's .label-purple */
+.label-section,
+.label-purple {
+  background-color: var(--cardinal-tint);
+  color: var(--cardinal);
+}
+
+/* Solid (due dates, exams) — also aliased to Just the Class's .label-red */
+.label-due,
+.label-exam,
+.label-red {
+  background-color: var(--cardinal);
+  color: var(--cream);
+}

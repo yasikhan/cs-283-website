@@ -3,6 +3,12 @@
 Jekyll site for Stanford CS 283, hosted on GitHub Pages:
 https://yasikhan.github.io/cs-283-website/
 
+The design is adapted from MIT's [Missing Semester](https://missing.csail.mit.edu/)
+(CC BY-NC-SA 4.0) with a Just the Class-style course calendar
+([Just the Class](https://github.com/kevinlin1/just-the-class), MIT), re-themed in
+Stanford Cardinal. This site is licensed **CC BY-NC-SA 4.0** — see `LICENSE`,
+`NOTICE`, and the [/license/](https://yasikhan.github.io/cs-283-website/license/) page.
+
 ## Local development
 
 Use **Ruby 3.3** to match the version GitHub Pages builds with (installed via
@@ -19,4 +25,4 @@ Then open http://localhost:4000/cs-283-website/
 > Note: newer Rubies (3.4+/4.x) drop libraries and methods the Pages-pinned
 > Jekyll relies on, so builds fail there. Stick with 3.3 locally.
 
-See `CLAUDE.md` for structure and conventions.
+See `CLAUDE.md` for architecture, theme tokens, and conventions.

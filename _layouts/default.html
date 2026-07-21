@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-  {% include nav.html %}
 
-  <main>
-    {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+  {% include head.html %}
+
+  <body>
+
+    {% include nav.html %}
+
+    <div id="content">
     {{ content }}
-  </main>
+    </div>
 
-  {% include footer.html %}
-</body>
+    {% include footer.html %}
+
+  </body>
+
 </html>

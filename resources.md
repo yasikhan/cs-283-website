@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: page
 title: Resources
 permalink: /resources/
 ---
 
 <!-- Resources: references, tools, tutorials, policies, external links.
-     Content and layout TBD (collaborative). -->
+     Content added collaboratively. -->
