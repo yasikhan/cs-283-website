@@ -1,10 +1,11 @@
 // Nav light/dark toggle. By default the theme follows the OS (matched pre-paint by
-// the inline script in _includes/head.html, and tracked live below). Toggling the
-// button stores an explicit choice that overrides the OS from then on. Loaded with
-// `defer`, so the DOM is already parsed.
+// the inline script in _includes/head.html, and tracked live below). Flipping the
+// switch stores an explicit choice that overrides the OS from then on. The knob's
+// position is driven by data-theme in CSS; here we sync the checkbox to it and
+// react to input. Loaded with `defer`, so the DOM is already parsed.
 (function () {
-  var btn = document.getElementById('theme-toggle');
-  if (!btn) return;
+  var box = document.getElementById('theme-switch');
+  if (!box) return;
 
   var root = document.documentElement;
 
@@ -17,23 +18,16 @@
     }
   }
 
-  // Show the icon for the theme you'd switch TO: moon in light mode, sun in dark.
-  function icon(theme) { return theme === 'dark' ? '☀' : '☾'; }
-  function label(theme) {
-    return theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-  }
-
   function apply(theme) {
     root.setAttribute('data-theme', theme);
-    btn.textContent = icon(theme);
-    btn.setAttribute('aria-label', label(theme));
+    box.checked = theme === 'dark'; // checked = dark (knob toward the moon)
   }
 
   apply(root.getAttribute('data-theme') || 'light');
 
-  // Toggle: flip the current theme and remember it as an explicit override.
-  btn.addEventListener('click', function () {
-    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  // Flip: remember the choice as an explicit override.
+  box.addEventListener('change', function () {
+    var next = box.checked ? 'dark' : 'light';
     try { localStorage.setItem('theme', next); } catch (e) {}
     apply(next);
   });

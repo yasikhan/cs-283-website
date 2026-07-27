@@ -409,27 +409,65 @@ blockquote.epigraph footer {
   border-radius: 0;
 }
 
-/* Light/dark toggle, anchored far-right and vertically centered on the nav bar.
-   Icon (☾ / ☀) + aria-label are set by assets/js/theme.js. */
-#theme-toggle {
+/* Light/dark toggle — sliding sun/moon pill (design adapted from
+   vitalik.eth.limo). Anchored far-right and vertically centered on the nav bar.
+   The knob position is driven by the data-theme attribute (see the dark block),
+   so it's correct pre-paint; the hidden checkbox is the accessible control that
+   theme.js keeps in sync. Icons stroke via currentColor = the nav foreground. */
+#color-mode-switch {
   position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 3px;
+  display: flex;
+  align-items: center;
   color: #fff;
-  font-family: "Courier Prime", monospace;
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0.15rem 0.45rem;
-  cursor: pointer;
 }
 
-#theme-toggle:hover {
-  background-color: #fff;
-  color: var(--cardinal);
+#color-mode-switch .cms-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  flex: none;
+}
+
+/* Visually-hidden checkbox; the label is the pill the user clicks. */
+#color-mode-switch input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* The pill track. Gold reads well on both the cardinal (light) and
+   cardinal-light (dark) nav bar. */
+#color-mode-switch label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 42px;
+  height: 21px;
+  border-radius: 30px;
+  background: #c3a554;
+  display: block;
+  position: relative;
+  margin: 0;
+}
+
+/* The knob. Base = light position (left, by the sun). */
+#color-mode-switch label::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+#color-mode-switch label:active::after {
+  width: 30px;
 }
 
 #top-nav {
@@ -538,14 +576,14 @@ input[type=checkbox]:checked ~ .menu-label:after {
     color: #ddd
   }
 
-  #theme-toggle {
-    border-color: rgba(0, 0, 0, 0.4);
+  /* Icons match the dark nav foreground; knob slides right, toward the moon. */
+  #color-mode-switch {
     color: #202020;
   }
 
-  #theme-toggle:hover {
-    background-color: #202020;
-    color: var(--cardinal-light);
+  #color-mode-switch label::after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
   }
 
   a {
