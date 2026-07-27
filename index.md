@@ -11,9 +11,7 @@ nositetitle: true
 
 ## Course description
 
-_[Placeholder]_ A short description of CS283 goes here — what the course covers,
-who it's for (undergraduate and law students), and what students will take away.
-Replace this paragraph with the real course overview.
+_[Placeholder description]_
 
 ## Instructors
 
