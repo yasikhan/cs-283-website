@@ -439,7 +439,7 @@ blockquote.epigraph footer {
   opacity: 0;
 }
 
-/* The pill track. Gold reads well on both the cardinal (light) and
+/* The pill track. Gray reads well on both the cardinal (light) and
    cardinal-light (dark) nav bar. */
 #color-mode-switch label {
   cursor: pointer;
@@ -447,7 +447,7 @@ blockquote.epigraph footer {
   width: 42px;
   height: 21px;
   border-radius: 30px;
-  background: #c3a554;
+  background: #9a9a9a;
   display: block;
   position: relative;
   margin: 0;
