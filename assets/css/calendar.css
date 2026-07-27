@@ -142,8 +142,9 @@
 
 /* Dark mode: re-theme the week cards so they transition with the page instead
    of staying bright white. The .module-title bar (cardinal + white) already
-   reads well against dark, so it needs no override here. */
-@media (prefers-color-scheme: dark) {
+   reads well against dark, so it needs no override here. Keyed off the
+   data-theme attribute so it follows the nav light/dark toggle. */
+:root[data-theme="dark"] {
   .module {
     background-color: #383838;
     border-color: rgba(255, 255, 255, 0.14);

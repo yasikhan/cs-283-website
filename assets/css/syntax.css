@@ -61,7 +61,7 @@ pre.highlight { background-color: #f9f9f9; background-clip: border-box }
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 
-@media (prefers-color-scheme: dark) {
+:root[data-theme="dark"] {
     code { background-color: #232323; }
     pre code { color: #ddd; }
     pre.highlight { background-color: #232323; }

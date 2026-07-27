@@ -396,17 +396,40 @@ blockquote.epigraph footer {
   color: #fff;
 }
 
-/* Stanford mark, anchored far-right and vertically centered on the nav bar.
+/* Stanford mark, anchored far-left and vertically centered on the nav bar.
    Portrait mark → size by height so it stays a narrow badge beside the links. */
 .nav-logo {
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   height: 1.5rem;
   width: auto;
   margin: 0;
   border-radius: 0;
+}
+
+/* Light/dark toggle, anchored far-right and vertically centered on the nav bar.
+   Icon (☾ / ☀) + aria-label are set by assets/js/theme.js. */
+#theme-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  color: #fff;
+  font-family: "Courier Prime", monospace;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background-color: #fff;
+  color: var(--cardinal);
 }
 
 #top-nav {
@@ -504,11 +527,25 @@ input[type=checkbox]:checked ~ .menu-label:after {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark theme. Applied via the data-theme attribute on <html>, which an inline
+   script in head.html sets pre-paint from localStorage or the OS preference, and
+   the nav toggle (assets/js/theme.js) flips. Nested so the whole block keys off
+   the one attribute selector. */
+:root[data-theme="dark"] {
 
   body {
     background-color: #303030;
     color: #ddd
+  }
+
+  #theme-toggle {
+    border-color: rgba(0, 0, 0, 0.4);
+    color: #202020;
+  }
+
+  #theme-toggle:hover {
+    background-color: #202020;
+    color: var(--cardinal-light);
   }
 
   a {
@@ -583,15 +620,15 @@ input[type=checkbox]:checked ~ .menu-label:after {
   }
 }
 
-@media (prefers-color-scheme: dark) and (min-width: 64rem) {
-  .sidenote-margin {
+@media (min-width: 64rem) {
+  :root[data-theme="dark"] .sidenote-margin {
     background: none;
     color: #ddd;
   }
 }
 
-@media (prefers-color-scheme: dark) and (max-width: 63.99rem) {
-  .sidenote-inline {
+@media (max-width: 63.99rem) {
+  :root[data-theme="dark"] .sidenote-inline {
     background-color: var(--cardinal-tint);
   }
 }

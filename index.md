@@ -28,6 +28,11 @@ Replace this paragraph with the real course overview.
     <div class="staff-name">Instructor Name</div>
     <div class="staff-role">Instructor</div>
   </div>
+  <div class="staff-card">
+    <div class="staff-photo"></div>
+    <div class="staff-name">Instructor Name</div>
+    <div class="staff-role">Instructor</div>
+  </div>
 </div>
 
 ## Course staff

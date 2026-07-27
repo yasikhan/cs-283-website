@@ -3,6 +3,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  {% comment %}Set the light/dark theme before first paint (no flash): use the
+  saved choice if any, else the OS preference. The nav toggle (theme.js) updates
+  data-theme + localStorage; all dark-mode CSS keys off this attribute.{% endcomment %}
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
   <!-- TODO: add a real CS283 favicon. (Stanford nav mark lives at
        assets/img/stanford_logo.png.) -->
 
@@ -44,6 +61,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}?v={{ v }}">
   <link rel="stylesheet" href="{{ '/assets/css/calendar.css' | relative_url }}?v={{ v }}">
   <script defer src="{{ '/assets/js/sidenotes.js' | relative_url }}?v={{ v }}"></script>
+  <script defer src="{{ '/assets/js/theme.js' | relative_url }}?v={{ v }}"></script>
 
   <!-- Fonts: Courier Prime (nav), Lato (headings + body), Source Code Pro (code) -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Courier+Prime:400,400i,700,700i|Source+Code+Pro&display=swap" rel="stylesheet" type="text/css">
