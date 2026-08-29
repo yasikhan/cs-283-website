@@ -736,6 +736,9 @@ input[type=checkbox]:checked ~ .menu-label:after {
 .logistics {
   display: grid;
   grid-template-columns: max-content 1fr;
+  /* Each dt/dd pair is its own grid row; centering here optically aligns the
+     small-caps label with the larger body text beside it. */
+  align-items: center;
   gap: 0.2rem 1rem;
   margin: 0 0 1rem;
 }
@@ -746,7 +749,6 @@ input[type=checkbox]:checked ~ .menu-label:after {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #666;
-  padding-top: 0.1rem;
 }
 
 .logistics dd {

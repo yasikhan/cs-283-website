@@ -73,19 +73,21 @@ See [Sections]({{ '/sections/' | relative_url }}) for the attendance policy.
 <summary>Law students</summary>
 <div class="track-body" markdown="1">
 
-Law students are graded by Professor Persily.
+### AI Governance Research Paper — 100%
 
-- You must complete the group policy assignment, graded **pass/fail**. If you do
-  not participate, you will not be eligible for Honors in the class.
-- You must attend the lectures and may miss **no more than two** if you wish to be
-  eligible for Honors. You are not expected to attend the last two classes, as
-  they conflict with the Law School's reading period.
-- Your grade, on the H-P system and the upper-level class curve, is determined by
-  a **final research paper of no fewer than 25 pages** on any topic within the
-  subject matter of the class. The paper is due **TBD** at noon.
-- You may use AI tools in the research and production of the paper, but you must
-  disclose in a separate document how you used AI, and **any hallucinations in the
-  paper will result in a failing grade.**
+Due TBD at 5pm.
+
+A final research paper of no fewer than 25 pages on any topic covered in the
+course.
+
+You may use AI tools in the research and production of the paper, but you must
+disclose in a separate document how you used AI, and **any hallucinations in the
+paper will result in a failing grade.**
+
+You must also complete the group policy assignment, graded **pass/fail**. If you
+do not participate, you will not be eligible for Honors in the class.
+
+<p class="course-note">Law students are graded by Professor Persily, on the H-P system and the upper-level class curve. You must attend the lectures and may miss no more than two if you wish to be eligible for Honors. You are not expected to attend the last two classes, as they conflict with the Law School's reading period.</p>
 
 </div>
 </details>

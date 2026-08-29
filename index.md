@@ -4,11 +4,10 @@ title: "CS283: Governing Artificial Intelligence: Law, Policy, and Institutions"
 permalink: /
 nositetitle: true
 description: >-
-  Stanford, Fall 2026. Law 4052 // Computer Science 283 // Communication 252A //
-  Political Science 245B/445B.
+  Stanford, Fall 2026. LAW4052/CS283/COMM252A/POLISCI245B.
 ---
 
-<p class="course-codes">Law 4052 &nbsp;//&nbsp; Computer Science 283 &nbsp;//&nbsp; Communication 252A &nbsp;//&nbsp; Political Science 245B/445B</p>
+<p class="course-codes">LAW4052/CS283/COMM252A/POLISCI245B</p>
 
 <dl class="logistics">
   <dt>Lectures</dt><dd>Monday &amp; Wednesday, 2:15–3:45pm</dd>
