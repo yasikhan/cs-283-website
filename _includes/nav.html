@@ -8,7 +8,24 @@
     <div class="trigger">
       <div class="trigger-child">
         <span class="nav-link"><a href="{{ '/schedule/' | relative_url }}">schedule</a></span>
-        <span class="nav-link"><a href="{{ '/lectures/' | relative_url }}">lectures</a></span>
+        <span class="nav-link nav-link--lectures">
+          <a href="{{ '/lectures/' | relative_url }}">lectures</a>
+          {%- comment -%}
+            Hover/focus panel listing every lecture, built from the _2026
+            collection so it can never fall out of step with the pages. One
+            truncated line each. Hidden below 40rem, where the nav collapses to
+            the checkbox menu and hover is meaningless on touch.
+          {%- endcomment -%}
+          <span class="nav-dropdown">
+            {%- assign nav_lectures = site['2026'] | sort: 'date' -%}
+            {%- for l in nav_lectures -%}
+              <a class="nav-dropdown-item" href="{{ l.url | relative_url }}">
+                <span class="nav-dropdown-num">{{ l.lecture }}</span>
+                <span class="nav-dropdown-title">{{ l.title }}</span>
+              </a>
+            {%- endfor -%}
+          </span>
+        </span>
         <span class="nav-link"><a href="{{ '/assignments/' | relative_url }}">assignments</a></span>
         <span class="nav-link"><a href="{{ '/sections/' | relative_url }}">sections</a></span>
         <span class="nav-link"><a href="{{ '/resources/' | relative_url }}">resources</a></span>

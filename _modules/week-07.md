@@ -1,17 +1,9 @@
 ---
-title: "Week 7 — [placeholder topic]"
+title: "Week 7 — Law and Policy in Practice, Part 2: Rest of World and International"
 year: 2026
 order: 7
+rows:
+  - lecture: 13
+  - section: true
+  - lecture: 14
 ---
-
-Nov 2
-: [Lecture 13 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 4
-: [Lecture 14 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 6
-: **Section**{: .label .label-section }[Section 7 — placeholder topic](#)
-: **HW 4 due**{: .label .label-due }

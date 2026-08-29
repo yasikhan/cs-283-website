@@ -1,17 +1,9 @@
 ---
-title: "Week 3 — [placeholder topic]"
+title: "Week 3 — Governance Challenges, Part 1: Discrimination & Democracy"
 year: 2026
 order: 3
+rows:
+  - lecture: 5
+  - section: true
+  - lecture: 6
 ---
-
-Oct 5
-: [Lecture 5 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 7
-: [Lecture 6 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 9
-: **Section**{: .label .label-section }[Section 3 — placeholder topic](#)
-: **HW 2 due**{: .label .label-due }

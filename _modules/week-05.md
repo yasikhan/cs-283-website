@@ -1,17 +1,9 @@
 ---
-title: "Week 5 — [placeholder topic]"
+title: "Week 5 — Governance Challenges, Part 3: Emerging Challenges"
 year: 2026
 order: 5
+rows:
+  - lecture: 9
+  - section: true
+  - lecture: 10
 ---
-
-Oct 19
-: [Lecture 9 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 21
-: [Lecture 10 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 23
-: **Section**{: .label .label-section }[Section 5 — placeholder topic](#)
-: **HW 3 due**{: .label .label-due }

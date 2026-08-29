@@ -2,22 +2,62 @@
 layout: default
 ---
 
-<h1 class="title">{{ page.title }}</h1>
-{% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+{% comment %}
+  Lecture page. Two columns on wide screens: the lecture itself on the left,
+  the readings ledger (_includes/readings.html) on the right; single column
+  below 64rem. Width override lives in assets/css/lecture.css, keyed off the
+  body's layout-lecture class.
+{% endcomment %}
 
-{% if page.video.id %}
-  <div class="youtube-wrapper" style="padding-bottom: {{ page.video.aspect }}%;">
-    <iframe src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="lecture-grid">
+  <div class="lecture-main">
+
+    {% if page.lecture %}
+      <p class="lecture-eyebrow">
+        Lecture {{ page.lecture }}
+      </p>
+    {% endif %}
+
+    <h1 class="title">{{ page.title }}</h1>
+    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+
+    {% if page.date or page.guest %}
+      <p class="lecture-meta">
+        {% if page.date %}{{ page.date | date: "%A, %B %-d, %Y" }}{% endif %}
+        {% if page.guest %}<span class="lecture-guest">Guest: {{ page.guest }}</span>{% endif %}
+      </p>
+    {% endif %}
+
+    {% if page.week_title %}
+      <p class="lecture-unit">Week {{ page.week }} &middot; {{ page.week_title }}</p>
+    {% endif %}
+
+    {% if page.summary %}
+      <p class="lecture-summary">{{ page.summary }}</p>
+    {% else %}
+      <p class="lecture-summary lecture-summary--tbd">Summary: TBD</p>
+    {% endif %}
+
+    {% if page.video.id %}
+      <div class="youtube-wrapper" style="padding-bottom: {{ page.video.aspect }}%;">
+        <iframe src="https://www.youtube.com/embed/{{ page.video.id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    {% elsif page.video %}
+      <p class="center padded bordered"><strong>Lecture video coming soon!</strong></p>
+    {% endif %}
+
+    {{ content }}
   </div>
-{% elsif page.video %}
-  <p class="center padded bordered"><strong>Lecture video coming soon!</strong></p>
-{% endif %}
 
-{{ content }}
+  {% if page.readings or page.readings_tbd %}
+    {% include readings.html %}
+  {% endif %}
+</div>
 
 <hr>
 
 <div class="small center">
+<p><a href="{{ '/lectures/' | relative_url }}">All lectures</a> &middot; <a href="{{ '/schedule/' | relative_url }}">Schedule</a></p>
 <p><a href="https://github.com/yasikhan/cs-283-website/blob/main/{{ page.path }}">Edit this page</a>.</p>
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.</p>
 </div>

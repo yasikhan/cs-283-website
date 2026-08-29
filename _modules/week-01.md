@@ -1,17 +1,11 @@
 ---
-title: "Week 1 — [placeholder topic]"
+title: "Week 1 — Foundations of AI and the Governance of Frontier Technologies"
 year: 2026
 order: 1
+# Rows reference lectures by number; the title, date and URL are looked up from
+# the _2026 collection so the schedule can never drift from the lecture pages.
+rows:
+  - lecture: 1
+  - section: true
+  - lecture: 2
 ---
-
-Sep 21
-: [Lecture 1 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Sep 23
-: [Lecture 2 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Sep 25
-: **Section**{: .label .label-section }[Section 1 — placeholder topic](#)
-: **HW 1 due**{: .label .label-due }

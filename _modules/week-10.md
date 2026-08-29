@@ -1,16 +1,8 @@
 ---
-title: "Week 10 — [placeholder topic]"
+title: "Week 10 — Outlook"
 year: 2026
 order: 10
+rows:
+  - lecture: 19
+  - section: true
 ---
-
-Nov 23
-: [Lecture 19 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 25
-: [Lecture 20 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 27
-: **Section**{: .label .label-section }[Section 10 — placeholder topic](#)

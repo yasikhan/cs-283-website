@@ -1,16 +1,9 @@
 ---
-title: "Week 4 — [placeholder topic]"
+title: "Week 4 — Governance Challenges, Part 2: Privacy, Ownership, and Creative Work"
 year: 2026
 order: 4
+rows:
+  - lecture: 7
+  - section: true
+  - lecture: 8
 ---
-
-Oct 12
-: [Lecture 7 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 14
-: [Lecture 8 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Oct 16
-: **Section**{: .label .label-section }[Section 4 — placeholder topic](#)

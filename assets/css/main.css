@@ -350,6 +350,14 @@ blockquote.epigraph footer {
   padding: 0 1rem;
 }
 
+/* Pages that need more than the 35rem measure opt in with `wide: true` in front
+   matter (default.html turns that into this body class). Content and footer
+   widen together so their edges keep lining up. */
+body.is-wide #content,
+body.is-wide #site-footer {
+  max-width: 53rem;
+}
+
 /* Course staff (home page): responsive grid of headshot cards, cs231n-style.
    .staff-photo is a CSS-drawn placeholder circle — swap for real <img> later. */
 .staff-grid {
@@ -695,4 +703,340 @@ input[type=checkbox]:checked ~ .menu-label:after {
   a[href^="https://"]::after, a[href^="http://"]::after {
     content: "("attr(href)")"; font-family: monospace; margin: 0 .25em;
   }
+}
+
+/* ---- Home page ----------------------------------------------------------
+   Course codes, logistics, and the instructor bio cards. */
+
+.course-codes {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--cardinal);
+  border-top: 2px solid var(--cardinal);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  padding: 0.5rem 0;
+  margin-top: 0;
+}
+
+.logistics {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.2rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.logistics dt {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+  padding-top: 0.1rem;
+}
+
+.logistics dd {
+  margin: 0;
+}
+
+.course-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+  border-left: 2px solid var(--cardinal-tint);
+  padding-left: 0.75rem;
+}
+
+/* Instructor cards: headshot beside name, department, and contact. Overrides
+   the compact .staff-card used for the plain headshot grid; the compound
+   selectors keep the override from depending on source order. */
+.staff-grid.staff-grid--instructors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.75rem;
+}
+
+.staff-card.staff-card--instructor {
+  display: flex;
+  gap: 1rem;
+  width: auto;
+  text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* The headshots are mixed aspect ratios (350x350, 400x400, 250x360, 163x240),
+   so cover-crop them into the circle instead of letting them squash. */
+.staff-card--instructor .staff-photo {
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0.2rem 0 0;
+}
+
+.staff-card--instructor .staff-name {
+  font-size: 1rem;
+}
+
+.staff-card--instructor .staff-role {
+  margin-bottom: 0.4rem;
+}
+
+.staff-contact {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 44rem) {
+  .staff-grid.staff-grid--instructors {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 26rem) {
+  .staff-card.staff-card--instructor {
+    display: block;
+  }
+
+  .staff-card--instructor .staff-photo {
+    margin-bottom: 0.5rem;
+  }
+}
+
+:root[data-theme="dark"] {
+  .course-codes {
+    color: var(--cardinal-light);
+    border-top-color: var(--cardinal-light);
+    border-bottom-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .logistics dt,
+  .course-note,
+  .staff-contact {
+    color: #aaa;
+  }
+
+  .staff-card.staff-card--instructor {
+    border-top-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* Assignment milestones: a definition list where the due date sits at the end
+   of each description, set in the utility face like the readings ledger. */
+.milestones {
+  margin-bottom: 1.75rem;
+}
+
+.milestones dt {
+  font-weight: 700;
+  margin-top: 0.9rem;
+}
+
+.milestones dd {
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0 1rem;
+}
+
+.milestone-due {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cardinal);
+  white-space: nowrap;
+}
+
+:root[data-theme="dark"] .milestone-due {
+  color: var(--cardinal-light);
+}
+
+/* ---- Collapsible tracks (/assignments/) ---------------------------------
+   Native <details>, no JS. The disclosure marker follows the (+)/(-) idiom the
+   mobile nav menu already uses rather than introducing a second one. */
+
+.track {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  margin: 0;
+}
+
+.track:last-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  margin-bottom: 1.5rem;
+}
+
+.track > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--cardinal);
+  padding: 0.7rem 0.2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* Hide the native triangle in both engines. */
+.track > summary::-webkit-details-marker {
+  display: none;
+}
+
+.track > summary::before {
+  content: "(+)";
+  font-family: "Courier Prime", monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.track[open] > summary::before {
+  content: "(-)";
+}
+
+.track > summary:hover {
+  background-color: var(--cardinal-tint);
+}
+
+.track > summary:focus-visible {
+  outline: 2px solid var(--cardinal);
+  outline-offset: 2px;
+}
+
+.track-body {
+  padding: 0 0.2rem 0.5rem;
+}
+
+/* The first heading inside an opened track shouldn't push off the summary. */
+.track-body > :first-child {
+  margin-top: 0;
+}
+
+:root[data-theme="dark"] {
+  .track,
+  .track:last-of-type {
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .track > summary {
+    color: var(--cardinal-light);
+  }
+
+  .track > summary:focus-visible {
+    outline-color: var(--cardinal-light);
+  }
+}
+
+/* ---- Lectures dropdown --------------------------------------------------
+   Reveals the whole course from the nav bar. Shown on hover and on
+   :focus-within so it is reachable by keyboard, not mouse only. */
+
+.nav-link--lectures {
+  position: relative;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  width: 26rem;
+  max-width: calc(100vw - 2rem);
+  margin-top: 0.25rem;
+  padding: 0.3rem 0;
+  text-align: left;
+  background: var(--cream);
+  border: 1px solid var(--cardinal);
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.nav-link--lectures:hover .nav-dropdown,
+.nav-link--lectures:focus-within .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* #top-nav a paints its links white for the cardinal bar; the panel sits on the
+   page background, so its links take the page's link colour instead. */
+#top-nav .nav-dropdown-item {
+  color: var(--cardinal);
+}
+
+#top-nav .nav-dropdown-item:hover {
+  color: #fff;
+  background-color: var(--cardinal);
+}
+
+.nav-dropdown-num {
+  flex: 0 0 1.4rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  text-align: right;
+  color: #999;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-num {
+  color: #f3d9d9;
+}
+
+/* One line each: 19 lectures fit without scrolling, long titles clip. */
+.nav-dropdown-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: "Lato", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Below 40rem the nav is the checkbox menu and there is no hover: "lectures"
+   stays a plain link to the index. */
+@media (max-width: 39.99rem) {
+  .nav-dropdown {
+    display: none !important;
+  }
+}
+
+:root[data-theme="dark"] {
+  .nav-dropdown {
+    background: #383838;
+    border-color: var(--cardinal-light);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  }
+
+  #top-nav .nav-dropdown-item {
+    color: var(--cardinal-light);
+    background-color: transparent;
+  }
+
+  #top-nav .nav-dropdown-item:hover {
+    color: #202020;
+    background-color: var(--cardinal-light);
+  }
+
+  .nav-dropdown-num {
+    color: #888;
+  }
+
+  .nav-dropdown-item:hover .nav-dropdown-num {
+    color: #5a2020;
+  }
+}
+
+@media print {
+  .nav-dropdown { display: none; }
 }

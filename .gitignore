@@ -7,3 +7,8 @@ vendor/
 
 # macOS
 .DS_Store
+
+# Source material (syllabus PDF etc.) — kept local. The repo is public and
+# the PDF still carries internal to-dos and XXX due dates. _config.yml also
+# excludes this folder from the Jekyll build.
+assets/documents/

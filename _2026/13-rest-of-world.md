@@ -1,0 +1,39 @@
+---
+lecture: 13
+title: "Rest of the World Approaches to AI Governance"
+date: 2026-11-04
+week: 7
+week_title: "Law and Policy in Practice, Part 2: Rest of World and International"
+ready: true
+summary: >-
+  This lecture examines the diverse and evolving approaches to AI governance in
+  regions such as China, Africa, Southeast Asia, and India, situating them within
+  broader debates on technology regulation and global power asymmetries. By
+  analyzing the institutional, legal, and normative frameworks emerging across
+  these regions, the lecture highlights how local political economies,
+  developmental priorities, and sociotechnical contexts shape distinct governance
+  trajectories. It further considers the implications of these regional
+  strategies for global governance, exploring whether they contribute to
+  convergence toward shared norms or reinforce a more plural, fragmented
+  landscape of AI regulation.
+readings:
+  required:
+    - authors: "Sheehan, M."
+      year: 2024
+      title: "Tracing the Roots of China's AI Regulations"
+    - authors: "Mohanti, A., & Sahu, S."
+      year: 2024
+      title: "India's Advance on AI Regulation"
+    - authors: "Adan, S."
+      year: 2024
+      title: "Voice and Access in AI: Global AI Majority Participation in Artificial Intelligence Development and Governance"
+    - authors: "Personal Data Protection Commission"
+      year: 2024
+      title: "Singapore's Approach to AI Governance (plus a skim of the Model AI Governance Framework for Generative AI)"
+    - authors: "Munga, J., & Quansah, S."
+      year: 2025
+      title: "Understanding Africa's AI Governance Landscape: Insights from Policy Practice and Dialogue"
+    - authors: "Committee for the Future, Parliament of Finland"
+      title: "Radical Technology Inquirer (RTI)"
+      url: "https://www.eduskunta.fi/en/members-and-parliamentary-bodies/committees/committee-for-the-future/radical-technology-inquirer-rti"
+---

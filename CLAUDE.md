@@ -50,17 +50,24 @@ suffixes.)
   `short_title: CS283`; `current_year: 2026`; kramdown/GFM; `future: true`
   (lecture/module dates are in the future at build time — required or their pages
   are not written); collections + layout defaults.
-- `_layouts/` — `default` (shell), `page`, `lecture` (MS), `module` (JtC calendar).
-- `_includes/` — `head`, `nav`, `footer` (attribution), `video`/`scaled_*` helpers.
-- `assets/css/` — `theme` (tokens), `main` (adapted MS), `syntax` (Rouge), `calendar`
-  (JtC modules). `assets/js/sidenotes.js`. (Renamed from `static/`.)
+- `_layouts/` — `default` (shell, sets `body.layout-<layout>`), `page`, `lecture`
+  (two-column: lecture + readings), `module` (JtC calendar).
+- `_includes/` — `head`, `nav`, `footer` (attribution), `readings` (the lecture
+  readings box), `video`/`scaled_*` helpers.
+- `assets/css/` — `theme` (tokens), `main` (adapted MS + home/assignment styles),
+  `syntax` (Rouge), `calendar` (JtC modules), `lecture` (lecture grid, readings
+  ledger, `/lectures/` index). `assets/js/sidenotes.js`. (Renamed from `static/`.)
+- `assets/documents/` — source material, currently the F26 syllabus PDF. **Not
+  linked from the site**: it still carries internal to-dos and `XXX` due dates.
 - Pages (`layout: page`) live in `pages/` — each declares its own `permalink`, so
   the folder is cosmetic (Jekyll renders front-matter files by permalink from any
   dir, no collection needed): `pages/assignments.md`, `sections.md`, `resources.md`,
   `lectures.md` (lists the `_2026` collection), `license.md`, `schedule.md`. The
   home page `index.md` (`/`) and `404.html` stay at the repo root.
-- `pages/schedule.md` (`/schedule/`) renders the calendar from
-  `site.modules | where: "year", site.current_year`.
+- `pages/schedule.md` (`/schedule/`) renders one 4-column table (date · lecture ·
+  slides · deadlines) from `site.modules | where: "year", site.current_year`;
+  each module contributes a `<tbody>`. Pages needing more than the 35rem measure
+  set `wide: true` in front matter (see `body.is-wide` in `main.css`).
 - Collections: `_modules/` (weekly calendar, `output: false`, needs `year` + `order`),
   `_2026/` (lecture pages, `output: true`, `layout: lecture`).
 
@@ -71,8 +78,20 @@ suffixes.)
   `/cs-283-website` baseurl — always route through `relative_url`.
 - New offering next fall: add a `_2027/` collection (mirror the `_2026` config +
   defaults), give new `_modules` docs `year: 2027`, and bump `current_year`.
-- Calendar labels use kramdown IAL: `**HW 1 due**{: .label .label-due }`,
-  `**Section**{: .label .label-section }` (styled in `calendar.css`).
+- **Lecture readings live in front matter**, not prose: each `_2026/*.md` carries
+  a `readings:` map with `required:` / `supplementary:` lists of
+  `{authors, year, title, venue, pages, url}` (all optional but `title`).
+  `_includes/readings.html` renders them and sums each group's stated `pages`
+  into the header total. `readings_tbd: true` renders an explicit TBD box for a
+  lecture the syllabus has not filled in yet. Page counts and citations come
+  from the syllabus verbatim — **never invent a `url:` or a page count.**
+- **`_modules` docs hold no prose** — just `title`/`year`/`order` and a `rows:`
+  list referencing lectures by number (`- lecture: 11`), plus `- section: true`
+  and `- note: "…"` rows. `_layouts/module.html` looks each one up in the `_2026`
+  collection, so a lecture's date and title are never written twice. Per-lecture
+  `slides:` (URL) and `deadline:` (badge text) feed the schedule's last two
+  columns. Labels use `.label .label-due` / `.label .label-section`
+  (styled in `calendar.css`).
 - CSS/JS `<link>`/`<script>` tags in `head.html` carry a `?v={{ site.time | date:
   '%s' }}` cache-buster so each Pages build serves fresh assets (Pages sets
   `max-age=600` on assets). Keep new local assets on that pattern.
@@ -90,8 +109,26 @@ to `PATH` before bundler. Newer Rubies (3.4+/4.x) drop stdlib libs and
 GitHub Pages builds from `main` (root). Push → auto rebuild. Poll with
 `gh api /repos/yasikhan/cs-283-website/pages/builds/latest -q .status`.
 
-## TODO / placeholders to fill
+## Content status (Fall 2026, from `assets/documents/F26 AIGov Syllabus.pdf`)
 
+Populated from the syllabus: home (description, logistics, four instructor bios),
+`/schedule/` (weeks 1–10), `/lectures/` + 18 lecture pages, `/assignments/`,
+`/sections/`, `/resources/`.
+
+Known gaps carried over from the syllabus itself — these render as **TBD/TBA** on
+the site and should not be filled in by guessing:
+
+- [ ] Lecture 10 and Lecture 14 have no summary and no readings
+      (`readings_tbd: true`). **Lecture 14 — Geopolitics and Global AI
+      Governance, Mon Nov 9 — is not in the syllabus PDF**; the instructors added
+      it, and weeks 6/7 were regrouped around it (Week 6 = L11 + L12, Week 7 =
+      L13 + L14). The PDF's own grouping is now out of date. (Lecture 16 exists
+      in the PDF's body but is missing from its TOC.)
+- [ ] Slide decks — every `/schedule/` row shows an inert `[slides]` placeholder
+      until a lecture gets a `slides:` URL in its front matter.
+- [ ] Reading URLs — the syllabus links only two of ~113 citations.
+- [ ] All assignment due dates (`XXX` in the syllabus); teaching assistants;
+      learning objectives (heading with no bullets); section topics, locations,
+      and leaders; office hours for Reuel and Koyejo.
 - [ ] Real favicon / branding assets under `assets/` (head has a TODO).
-- [ ] Real schedule weeks, lectures, assignments, section info (collaborative).
 - [ ] Code/monospace font choice; custom Stanford domain — later.

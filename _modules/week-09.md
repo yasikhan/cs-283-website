@@ -1,17 +1,10 @@
 ---
-title: "Week 9 — [placeholder topic]"
+title: "Week 9 — Living with AI"
 year: 2026
 order: 9
+rows:
+  - lecture: 17
+  - section: true
+  - note: "Fall break — no class"
+  - lecture: 18
 ---
-
-Nov 16
-: [Lecture 17 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 18
-: [Lecture 18 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 20
-: **Section**{: .label .label-section }[Section 9 — placeholder topic](#)
-: **HW 5 due**{: .label .label-due }

@@ -47,6 +47,11 @@ defaults:
       layout: lecture
 
 exclude:
+  # Source material, not a site asset. Anything under assets/ is copied into the
+  # build and reachable by URL even with nothing linking to it — and this PDF
+  # still carries internal to-dos and XXX due dates. Delete this line to publish
+  # it (then link it from index.md / resources.md).
+  - assets/documents
   - Gemfile
   - Gemfile.lock
   - CLAUDE.md

@@ -1,6 +1,58 @@
-<!-- Calendar module. Adapted from Just the Class (github.com/kevinlin1/just-the-class, MIT).
-     Each _modules doc is a kramdown definition list of date -> topic -> materials. -->
-<h2 class="module-title" id="{{ page.title | slugify }}">{{ page.title }}</h2>
-<div class="module">
-  {{ content }}
-</div>
+{%- comment -%}
+  One week of the course calendar: a header row spanning the table, then one row
+  per entry. Structure adapted from Just the Class
+  (github.com/kevinlin1/just-the-class, MIT); re-implemented as a table.
+
+  Rows are declared in the module's front matter and reference lectures by
+  number — the date, title and URL come from the _2026 collection, so the
+  schedule and the lecture pages cannot disagree. Row kinds:
+
+    - lecture: N      a lecture, looked up in site['2026']
+    - section: true   the weekly Thu/Fri section
+    - note: "…"       a one-off (fall break)
+{%- endcomment -%}
+
+<tbody class="cal-week">
+  <tr class="cal-week-row">
+    <th class="cal-week-title" colspan="4" scope="colgroup" id="{{ page.title | slugify }}">{{ page.title }}</th>
+  </tr>
+
+  {%- for row in page.rows -%}
+    {%- if row.lecture -%}
+      {%- assign doc = site['2026'] | where: 'lecture', row.lecture | first -%}
+      {%- if doc -%}
+      <tr>
+        <td class="cal-date">{{ doc.date | date: '%a, %b %-d' }}</td>
+        <td class="cal-topic">
+          <span class="cal-num">{{ doc.lecture }}</span>
+          <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+        </td>
+        <td class="cal-slides">
+          {%- if doc.slides -%}
+            <a href="{{ doc.slides }}">[slides]</a>
+          {%- else -%}
+            <span class="cal-slides-tbd">[slides]</span>
+          {%- endif -%}
+        </td>
+        <td class="cal-deadline">
+          {%- if doc.deadline %}<span class="label label-due">{{ doc.deadline }}</span>{% endif -%}
+        </td>
+      </tr>
+      {%- endif -%}
+
+    {%- elsif row.section -%}
+      <tr class="cal-row--section">
+        <td class="cal-date">Thu/Fri</td>
+        <td class="cal-topic"><span class="label label-section">Section</span>{{ row.topic | default: 'Topic TBD' }}</td>
+        <td class="cal-slides"></td>
+        <td class="cal-deadline"></td>
+      </tr>
+
+    {%- elsif row.note -%}
+      <tr class="cal-row--note">
+        <td class="cal-date"></td>
+        <td class="cal-topic" colspan="3">{{ row.note }}</td>
+      </tr>
+    {%- endif -%}
+  {%- endfor -%}
+</tbody>

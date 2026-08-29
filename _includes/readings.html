@@ -1,0 +1,61 @@
+{% comment %}
+  Readings box for a lecture page. Reads the structured `readings` map in the
+  lecture's front matter:
+
+    readings:
+      required:      [ { authors, year, title, venue, pages, url }, ... ]
+      supplementary: [ ... ]
+
+  Every field is optional except `title`. Page counts come straight from the
+  syllabus; where it gives none, the ledger prints an em dash rather than a
+  guess. Renders nothing when a lecture has no readings block.
+{% endcomment %}
+
+<aside class="readings" aria-labelledby="readings-h">
+  <h2 class="readings-h" id="readings-h">Readings</h2>
+
+  {% if page.readings_note %}
+    <p class="readings-note">{{ page.readings_note }}</p>
+  {% endif %}
+
+  {% assign groups = "required,supplementary" | split: "," %}
+  {% for group in groups %}
+    {% assign items = page.readings[group] %}
+    {% if items and items.size > 0 %}
+
+      {% comment %}Group total: sum of the stated page counts. Items with no
+      count contribute nothing, so the total is a floor, not a claim.{% endcomment %}
+      {% assign total = 0 %}
+      {% for r in items %}{% if r.pages %}{% assign total = total | plus: r.pages %}{% endif %}{% endfor %}
+
+      <section class="readings-group readings-group--{{ group }}">
+        <h3 class="readings-group-h">
+          <span class="readings-group-name">{{ group }}</span>
+          {% if total > 0 %}<span class="readings-total">{{ total }} pp</span>{% endif %}
+        </h3>
+
+        <ul class="readings-list">
+          {% for r in items %}
+            <li class="reading">
+              <div class="reading-body">
+                {% if r.authors %}<span class="reading-authors">{{ r.authors }}</span>{% endif %}
+                <cite class="reading-title">{% if r.url %}<a href="{{ r.url }}">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</cite>
+                {% if r.venue %}<span class="reading-venue">{{ r.venue }}</span>{% endif %}
+              </div>
+              <div class="reading-ledger">
+                <span class="reading-year">{% if r.year %}{{ r.year }}{% endif %}</span>
+                <span class="reading-pages">{% if r.pages %}{{ r.pages }}{% else %}&mdash;{% endif %}</span>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+    {% elsif group == "required" and page.readings_tbd %}
+      <section class="readings-group readings-group--required">
+        <h3 class="readings-group-h"><span class="readings-group-name">required</span></h3>
+        <p class="readings-tbd">TBD</p>
+      </section>
+    {% endif %}
+  {% endfor %}
+</aside>

@@ -1,16 +1,9 @@
 ---
-title: "Week 8 — [placeholder topic]"
+title: "Week 8 — The AI Economy"
 year: 2026
 order: 8
+rows:
+  - lecture: 15
+  - section: true
+  - lecture: 16
 ---
-
-Nov 9
-: [Lecture 15 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 11
-: [Lecture 16 — placeholder title](#)
-  : [slides](#), [notes](#)
-
-Nov 13
-: **Section**{: .label .label-section }[Section 8 — placeholder topic](#)
