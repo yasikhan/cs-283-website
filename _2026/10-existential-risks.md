@@ -1,6 +1,7 @@
 ---
 lecture: 10
 title: "Existential Risks & Benefits, AGI, Autonomous R&D, CBRN"
+nav_title: "Existential Risks"
 date: 2026-10-26
 week: 5
 week_title: "Governance Challenges, Part 3: Emerging Challenges"

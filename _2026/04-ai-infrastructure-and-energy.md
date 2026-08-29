@@ -1,6 +1,7 @@
 ---
 lecture: 4
 title: "AI Infrastructure & Energy"
+nav_title: "AI Infrastructure & Energy"
 date: 2026-10-05
 week: 2
 week_title: "Technical Foundations: Measurement and Compute"

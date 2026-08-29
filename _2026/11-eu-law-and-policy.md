@@ -1,6 +1,7 @@
 ---
 lecture: 11
 title: "EU Law and Policy"
+nav_title: "EU Law and Policy"
 date: 2026-10-28
 week: 6
 week_title: "Law and Policy in Practice, Part 1: EU and US"

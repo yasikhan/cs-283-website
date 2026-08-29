@@ -85,6 +85,10 @@ suffixes.)
   into the header total. `readings_tbd: true` renders an explicit TBD box for a
   lecture the syllabus has not filled in yet. Page counts and citations come
   from the syllabus verbatim — **never invent a `url:` or a page count.**
+- **Lecture nav titles**: the hover dropdown in `_includes/nav.html` shows each
+  lecture's `nav_title:` (a short form, e.g. `AI Agents` for L9), falling back to
+  `title` when it is absent. `/lectures/`, `/schedule/`, and the lecture pages
+  themselves all keep the full syllabus `title`. New lectures should carry both.
 - **`_modules` docs hold no prose** — just `title`/`year`/`order` and a `rows:`
   list referencing lectures by number (`- lecture: 11`), plus `- section: true`
   and `- note: "…"` rows. `_layouts/module.html` looks each one up in the `_2026`

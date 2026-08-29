@@ -1,6 +1,7 @@
 ---
 lecture: 9
 title: "The Special Problem of AI Agents & Multi-Agent Dynamics"
+nav_title: "AI Agents"
 date: 2026-10-21
 week: 5
 week_title: "Governance Challenges, Part 3: Emerging Challenges"

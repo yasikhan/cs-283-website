@@ -1,6 +1,7 @@
 ---
 lecture: 6
 title: "AI & Democracy"
+nav_title: "AI & Democracy"
 date: 2026-10-12
 week: 3
 week_title: "Governance Challenges, Part 1: Discrimination & Democracy"

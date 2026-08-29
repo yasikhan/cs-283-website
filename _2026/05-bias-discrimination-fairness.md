@@ -1,6 +1,7 @@
 ---
 lecture: 5
 title: "Bias, Discrimination, and Fairness"
+nav_title: "Bias, Discrimination, and Fairness"
 date: 2026-10-07
 week: 3
 week_title: "Governance Challenges, Part 1: Discrimination & Democracy"

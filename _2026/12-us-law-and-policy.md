@@ -1,6 +1,7 @@
 ---
 lecture: 12
 title: "Federal & State-Level US Law and Policy"
+nav_title: "US Law and Policy"
 date: 2026-11-02
 week: 6
 week_title: "Law and Policy in Practice, Part 1: EU and US"

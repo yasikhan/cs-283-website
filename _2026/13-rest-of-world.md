@@ -1,6 +1,7 @@
 ---
 lecture: 13
 title: "Rest of the World Approaches to AI Governance"
+nav_title: "Rest of World AI Governance"
 date: 2026-11-04
 week: 7
 week_title: "Law and Policy in Practice, Part 2: Rest of World and International"

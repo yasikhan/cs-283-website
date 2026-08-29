@@ -1,6 +1,7 @@
 ---
 lecture: 19
 title: "The Future of AI Governance"
+nav_title: "Future of AI Governance"
 date: 2026-12-02
 week: 10
 week_title: "Outlook"

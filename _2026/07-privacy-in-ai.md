@@ -1,6 +1,7 @@
 ---
 lecture: 7
 title: "Privacy in AI"
+nav_title: "Privacy in AI"
 date: 2026-10-14
 week: 4
 week_title: "Governance Challenges, Part 2: Privacy, Ownership, and Creative Work"

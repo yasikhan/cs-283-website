@@ -1,6 +1,7 @@
 ---
 lecture: 17
 title: "AI Harms: Defamation & Well-being"
+nav_title: "AI Harms"
 date: 2026-11-18
 week: 9
 week_title: "Living with AI"

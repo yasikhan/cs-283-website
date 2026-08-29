@@ -1,6 +1,7 @@
 ---
 lecture: 3
 title: "AI Evaluations"
+nav_title: "AI Evaluations"
 date: 2026-09-30
 week: 2
 week_title: "Technical Foundations: Measurement and Compute"

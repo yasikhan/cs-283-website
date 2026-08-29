@@ -1,6 +1,7 @@
 ---
 lecture: 18
 title: "What Does It Mean to Be Human in an AI Age? How Should We Design for Human-Machine Companionship?"
+nav_title: "AI and Humanity"
 date: 2026-11-30
 week: 9
 week_title: "Living with AI"

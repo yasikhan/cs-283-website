@@ -1,6 +1,7 @@
 ---
 lecture: 8
 title: "AI, Copyright, and Creativity"
+nav_title: "Copyright and Creativity"
 date: 2026-10-19
 week: 4
 week_title: "Governance Challenges, Part 2: Privacy, Ownership, and Creative Work"

@@ -31,7 +31,7 @@
       <section class="readings-group readings-group--{{ group }}">
         <h3 class="readings-group-h">
           <span class="readings-group-name">{{ group }}</span>
-          {% if total > 0 %}<span class="readings-total">{{ total }} pp</span>{% endif %}
+          {% if total > 0 %}<span class="readings-total">{{ total }} total pages</span>{% endif %}
         </h3>
 
         <ul class="readings-list">
@@ -44,7 +44,7 @@
               </div>
               <div class="reading-ledger">
                 <span class="reading-year">{% if r.year %}{{ r.year }}{% endif %}</span>
-                <span class="reading-pages">{% if r.pages %}{{ r.pages }}{% else %}&mdash;{% endif %}</span>
+                <span class="reading-pages">{% if r.pages %}{{ r.pages }}<span class="reading-pages-unit"> p.</span>{% else %}&mdash;{% endif %}</span>
               </div>
             </li>
           {% endfor %}

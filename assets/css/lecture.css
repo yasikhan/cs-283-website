@@ -98,7 +98,7 @@ body.layout-lecture h1.title {
   font-size: 0.72rem;
   font-style: italic;
   color: #666;
-  margin: 0.5rem 0 0;
+  margin: 0.5rem 0 0.35rem;
 }
 
 .readings-group--supplementary {
@@ -118,7 +118,7 @@ body.layout-lecture h1.title {
   letter-spacing: 0.1em;
   color: var(--cardinal);
   margin: 0;
-  padding: 0.45rem 0 0.3rem;
+  padding: 0.45rem 0;
 }
 
 .readings-total {
@@ -199,6 +199,13 @@ body.layout-lecture h1.title {
   color: #333;
 }
 
+/* The unit sits back so the count still reads as a figure, the same way
+   .reading-year sits back from the title. */
+.reading-pages-unit {
+  font-size: 0.72rem;
+  color: #777;
+}
+
 /* Supplementary sits one step quieter than required. */
 .readings-group--supplementary .reading-title {
   font-size: 0.8rem;
@@ -258,6 +265,10 @@ body.layout-lecture h1.title {
     color: #ddd;
   }
 
+  .reading-pages-unit {
+    color: #999;
+  }
+
   .readings-group--supplementary .reading-pages {
     color: #aaa;
   }
@@ -307,6 +318,11 @@ body.layout-lecture h1.title {
   border-bottom: 2px solid var(--cardinal);
   padding-bottom: 0.2rem;
   margin: 1.75rem 0 0;
+}
+
+/* .lecture-index already supplies the leading; week 1 must not add to it. */
+.lecture-index-week:first-of-type {
+  margin-top: 0;
 }
 
 .lecture-index-item {

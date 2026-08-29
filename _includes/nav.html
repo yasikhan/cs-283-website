@@ -12,8 +12,9 @@
           <a href="{{ '/lectures/' | relative_url }}">lectures</a>
           {%- comment -%}
             Hover/focus panel listing every lecture, built from the _2026
-            collection so it can never fall out of step with the pages. One
-            truncated line each. Hidden below 40rem, where the nav collapses to
+            collection so it can never fall out of step with the pages. Each row
+            shows the lecture's short `nav_title` (falling back to its full
+            title), one line each. Hidden below 40rem, where the nav collapses to
             the checkbox menu and hover is meaningless on touch.
           {%- endcomment -%}
           <span class="nav-dropdown">
@@ -21,7 +22,7 @@
             {%- for l in nav_lectures -%}
               <a class="nav-dropdown-item" href="{{ l.url | relative_url }}">
                 <span class="nav-dropdown-num">{{ l.lecture }}</span>
-                <span class="nav-dropdown-title">{{ l.title }}</span>
+                <span class="nav-dropdown-title">{{ l.nav_title | default: l.title }}</span>
               </a>
             {%- endfor -%}
           </span>
