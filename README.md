@@ -2,13 +2,13 @@
 
 Jekyll site for **CS283: Governing Artificial Intelligence: Law, Policy, and
 Institutions** (Stanford), hosted on GitHub Pages:
-https://yasikhan.github.io/cs-283-website/
+https://cs-ai-governance.github.io/cs-283-website/
 
 The design is adapted from MIT's [Missing Semester](https://missing.csail.mit.edu/)
 (CC BY-NC-SA 4.0) with a Just the Class-style course calendar
 ([Just the Class](https://github.com/kevinlin1/just-the-class), MIT), re-themed in
 Stanford Cardinal. This site is licensed **CC BY-NC-SA 4.0** — see `LICENSE`,
-`NOTICE`, and the [/license/](https://yasikhan.github.io/cs-283-website/license/) page.
+`NOTICE`, and the [/license/](https://cs-ai-governance.github.io/cs-283-website/license/) page.
 
 ## Local development
 
